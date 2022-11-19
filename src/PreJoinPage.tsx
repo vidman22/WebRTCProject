@@ -64,16 +64,28 @@ export const PreJoinPage = ({
             console.error(err);
         }
     }
+    const handleCamera = async () => {
+        try {
+            await getPermission();
+            navigation.push('MLCamera');
+        } catch (err) {
+            console.error(err);
+        }
+    }
 
     return (
         <View style={styles.container}>
-            <Button
+            {/* <Button
                 title="Create"
                 onPress={handleCreate}
-            />
-            <Button
+            /> */}
+            {/* <Button
                 title="Join"
                 onPress={handleJoin}
+            /> */}
+            <Button
+                title="Camera"
+                onPress={handleCamera}
             />
             <View style={styles.spacer} />
         </View>
